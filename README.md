@@ -1,2 +1,5 @@
 # hacks
-pip install package== # this will give the available package versions
+```python
+# this will give the available package versions
+pip install package==
+```
