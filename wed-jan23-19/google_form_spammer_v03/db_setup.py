@@ -20,8 +20,8 @@ except sqlite3.OperationalError:
 # 	mob_no integer
 # )""")
 
-# c.execute("INSERT INTO DUMMY_DATA VALUES ('Amir Khan', 11756893, 43, 9657894847)")
-c.execute("SELECT NAME FROM DUMMY_DATA")
+c.execute("INSERT INTO DUMMY_DATA VALUES ('Amir Khan', 11756893, 43, 9657894847)")
+c.execute("SELECT * FROM DUMMY_DATA")
 c.fetchall()
 
 connect.commit()
