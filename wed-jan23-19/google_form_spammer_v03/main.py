@@ -1,3 +1,5 @@
+from db_setup import c
+
 from selenium import webdriver
 
 import random
@@ -20,19 +22,12 @@ xpath_newResponce = "/html/body/div[1]/div[2]/div[1]/div[2]/div[3]/a"
 
 
 while( True ):
-	input_data = []
-	input_data.append(''.join([random.choice(string.ascii_letters + string.digits) for n in range(32)]))
-	input_data.append(str(random.randint(11700000, 11799999)))
-	input_data.append(str(random.randint(1, 68)))
-	input_data.append(str(random.randint(6000000000, 9999999999)))
-	input_data.append(str(random.randint(1,2)))
-
 	for i in range(0, 4):
 		final_xpath = xpath_field_a + str(i + 1) + xpath_field_b
-		driver.find_element_by_xpath( final_xpath ).send_keys( input_data[i] )
+		driver.find_element_by_xpath( final_xpath ).send_keys( c.fetchone()[i] )
 		time.sleep(0.5)
 
-	driver.find_element_by_xpath( xpath_radio_a + input_data[4] + xpath_radio_b ).click()
+	driver.find_element_by_xpath( xpath_radio_a + str(random.randint(1,2)) + xpath_radio_b ).click()
 	time.sleep(0.5)
 	driver.find_element_by_xpath( xpath_submit ).click()
 
