@@ -1,5 +1,4 @@
-from db_setup import c
-
+from db_setup import input_data
 from selenium import webdriver
 
 import random
@@ -19,14 +18,14 @@ xpath_radio_b = "]/div/div[1]/div[3]/div"
 xpath_submit = "/html/body/div/div[2]/form/div/div[2]/div[3]/div[1]/div/div/content/span"
 xpath_newResponce = "/html/body/div[1]/div[2]/div[1]/div[2]/div[3]/a"
 
-
+row = 0
 
 while( True ):
 	for i in range(0, 4):
 		final_xpath = xpath_field_a + str(i + 1) + xpath_field_b
-		driver.find_element_by_xpath( final_xpath ).send_keys( c.fetchone()[i] )
+		driver.find_element_by_xpath( final_xpath ).send_keys( str(input_data[row][i]) )
 		time.sleep(0.5)
-
+	row += 1
 	driver.find_element_by_xpath( xpath_radio_a + str(random.randint(1,2)) + xpath_radio_b ).click()
 	time.sleep(0.5)
 	driver.find_element_by_xpath( xpath_submit ).click()
