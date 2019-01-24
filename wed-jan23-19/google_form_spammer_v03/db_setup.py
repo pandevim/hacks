@@ -32,11 +32,13 @@ for _ in range(0, 10):
 		fake.first_name() + ' ' + fake.last_name(),
 		str(random.randint(11700000, 11799999)),
 		str(random.randint(1, 68)),
-		fake.phone_number()
+		fake.phone_number().replace('-', '').replace('+', '').replace(' ', '')
 	))
 
+# c.execute("DELETE FROM DUMMY_DATA")
 c.execute("SELECT * FROM DUMMY_DATA")
 input_data = c.fetchall()
+
 
 
 connect.commit()
