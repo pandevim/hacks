@@ -1,5 +1,3 @@
-# This is the spammer bot I made to overload our class information form.
-
 from selenium import webdriver
 import random
 import string
