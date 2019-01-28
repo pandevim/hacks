@@ -28,3 +28,5 @@ while( True ):
 
 	time.sleep( random.randint(1,3) )
 	driver.find_element_by_xpath( xpath_newResponce ).click()
+
+driver.close()
