@@ -4,7 +4,7 @@
 $ pip install -U -r requirements/default.txt
 ```
 
-### Running the tests
+### Running test suites
 
 ```bash
 $ pip install -U -r requirements/default.txt
