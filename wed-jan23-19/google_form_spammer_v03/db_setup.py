@@ -20,12 +20,12 @@ try:
 except sqlite3.OperationalError:
 	pass
 
-c.execute("""CREATE TABLE IF NOT EXIST DUMMY_DATA (
-	name text,
-	reg_no integer,
-	roll_no integer,
-	mob_no integer
-)""")
+# c.execute("""CREATE TABLE IF NOT EXIST DUMMY_DATA (
+# 	name text,
+# 	reg_no integer,
+# 	roll_no integer,
+# 	mob_no integer
+# )""")
 
 for _ in range(0, 10):
 	c.execute("INSERT INTO DUMMY_DATA VALUES (?,?,?,?)" , (
